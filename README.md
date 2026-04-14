@@ -45,6 +45,21 @@ Para desplegar este proyecto en un entorno local, siga estos pasos:
     streamlit run app.py
     ```
 
+    Requisito de Estructura de Archivos
+
+Para garantizar el correcto funcionamiento del sistema de detección, es estrictamente necesario que tanto el script de la aplicación (app.py) como el modelo entrenado (modelo_fraude.pkl) se encuentren localizados en la misma carpeta raíz.
+
+Justificación Técnica:
+La arquitectura del software utiliza rutas relativas para la carga del motor de inferencia. Esto significa que el código busca el archivo del modelo en su entorno inmediato; si estos archivos se separan en directorios distintos, el sistema no podrá inicializar el modelo de inteligencia artificial y generará un error de carga (FileNotFoundError) al intentar ejecutar las predicciones.
+
+Ejemplo de organización correcta:
+
+    Carpeta_Proyecto/
+
+        app.py (Script de ejecución)
+
+        modelo_fraude.pkl (Cerebro del modelo)
+
 Metodología
 
 El desarrollo se fundamenta en la comparación de arquitecturas de ensamble frente a redes neuronales profundas. Se priorizó la reducción de falsos negativos (Falsos Negativos) mediante la optimización del Recall, garantizando un sistema robusto para la mitigación de riesgos financieros.
