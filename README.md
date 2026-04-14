@@ -35,6 +35,8 @@ Para desplegar este proyecto en un entorno local, siga estos pasos:
     Asegúrese de tener Python instalado y ejecute:
     ```bash
     pip install -r requirements.txt
+
+    pip install streamlit
     ```
 
 3.  **Ejecutar la aplicación:**
